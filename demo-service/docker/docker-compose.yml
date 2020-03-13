@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  demo-server:
+    container_name: demo-server
+    ports:
+      - 9999:9999
+      - 9090:9090
+    image: micro-sqkb-api-v2:latest
+    volumes:
+      - ../:/working/
+    networks:
+      - demo-server
+    environment:
+      TZ: 'Asia/Shanghai'
+networks:
+  demo-server:
